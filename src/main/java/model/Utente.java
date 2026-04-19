@@ -11,9 +11,9 @@ public class Utente {
         this.login = login;
         this.password = password;
         bacheca = new ArrayList<>();
-        bacheca.add(new Bacheca("Universita",""));
-        bacheca.add(new Bacheca("Tempo LIbero",""));
-        bacheca.add(new Bacheca("Lavoro",""));
+        bacheca.add(new Bacheca(TitoloBacheca.UNIVERSITA,"Università"));
+        bacheca.add(new Bacheca(TitoloBacheca.TEMPOLIBERO,"Tempo Libero"));
+        bacheca.add(new Bacheca(TitoloBacheca.LAVORO,"Lavoro"));
     }
 
     public boolean login(String login, String password) {
