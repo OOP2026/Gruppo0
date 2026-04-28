@@ -1,7 +1,5 @@
 package model;
 
-import com.sun.tools.javac.comp.Check;
-
 import java.util.ArrayList;
 
 public class CheckList {
