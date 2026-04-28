@@ -7,8 +7,7 @@ public class Main {
 		System.out.println(u.login("pippo","pluto"));
 		System.out.println(u.login("topolino","minni"));
 
-		Bacheca bacheca = (Bacheca) u.getBacheca().get(0);
-		bacheca.addTodo(new ToDo(bacheca,"Completare il programma"));
+
 
 	}
 

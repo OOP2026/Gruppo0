@@ -5,12 +5,11 @@ import java.util.ArrayList;
 public class Utente {
     private String login;
     private String password;
+    private ArrayList<Bacheca> bacheca;
 
     public ArrayList<Bacheca> getBacheca() {
         return bacheca;
     }
-
-    private ArrayList<Bacheca> bacheca;
 
     public Utente(String login, String password) {
         this.login = login;

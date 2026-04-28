@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Bacheca {
 	private ArrayList<ToDo> toDo;
 	private TitoloBacheca titolo;
+	private Utente proprietario;
+	private String descrizione;
 
 	public ArrayList<ToDo> getToDo() {
 		return toDo;
@@ -38,8 +40,6 @@ public class Bacheca {
 		this.proprietario = proprietario;
 	}
 
-	private String descrizione;
-	private Utente proprietario;
 
 	public Bacheca(TitoloBacheca titolo, String descrizione, Utente proprietario) {
 		toDo = new ArrayList<>();
@@ -48,8 +48,9 @@ public class Bacheca {
 		this.proprietario=proprietario;
 	}
 
-	public void addTodo(ToDo todo){
+	public int addTodo(ToDo todo){
 		this.toDo.add(todo);
+		return toDo.size()-1;
 	}
 
 
