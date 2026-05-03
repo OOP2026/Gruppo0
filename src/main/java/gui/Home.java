@@ -2,8 +2,11 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Home {
+    private static JFrame frame;
     private JPanel panel;
     private JPanel bacheca1;
     private JPanel bacheca2;
@@ -17,8 +20,26 @@ public class Home {
     private JList list1;
     private JButton exitButton;
 
+    public Home() {
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame,"Ciao");
+                System.exit(0);
+            }
+        });
+        buttonAddToDo1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AggiungiToDo aggiungiToDo = new AggiungiToDo(frame);
+                aggiungiToDo.frame.setVisible(true);
+                frame.setVisible(false);
+            }
+        });
+    }
+
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Home");
+        frame = new JFrame("Home");
         frame.setContentPane(new Home().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
