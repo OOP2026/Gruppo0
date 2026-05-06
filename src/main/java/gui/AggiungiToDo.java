@@ -1,5 +1,7 @@
 package gui;
 
+import controller.Controller;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +18,7 @@ public class AggiungiToDo {
     private JButton buttonCancel;
 
 
-    public AggiungiToDo(JFrame frameChiamante) {
+    public AggiungiToDo(JFrame frameChiamante, Controller controller) {
         frame = new JFrame("AggiungiToDo");
         frame.setContentPane(panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,7 +28,19 @@ public class AggiungiToDo {
         buttonAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                // Validazione dell'input
+                if(textTitolo.getText().equals("") || textDescrizione.getText().equals("")) {
+                    JOptionPane.showMessageDialog(frame, "Non hai riempito tutti i campi!");
+                } else {
+                    // Controllo dell'elaborazione
+                    if (controller.aggiungiToDo(textTitolo.getText(), textDescrizione.getText())) {
+                        frameChiamante.setVisible(true);
+                        frame.dispose();
+                    } else {
+                        // Elaborazione non valida
+                        JOptionPane.showMessageDialog(frame, "Qualcosa e' andato storto");
+                    }
+                }
             }
         });
         buttonCancel.addActionListener(new ActionListener() {
