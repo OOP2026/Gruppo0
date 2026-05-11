@@ -6,7 +6,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * L'interfaccia grafica per aggiungere un ToDo
+ */
 public class AggiungiToDo {
+    /**
+     * Cornice della finestra per aggiungere ToDo
+     */
     JFrame frame;
     private JTextField textTitolo;
     private JTextArea textDescrizione;
@@ -18,6 +24,12 @@ public class AggiungiToDo {
     private JButton buttonCancel;
 
 
+    /**
+     * Instantiates a new Aggiungi to do.
+     *
+     * @param frameChiamante cornice della finestra da cui siamo arrivati e dobbiamo tornare
+     * @param controller     classe unica controller con tutte le funzionalità
+     */
     public AggiungiToDo(JFrame frameChiamante, Controller controller) {
         frame = new JFrame("AggiungiToDo");
         frame.setContentPane(panelMain);

@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The type Home.
+ */
 public class Home {
     private static JFrame frame;
     private static Controller controller;
@@ -23,6 +26,9 @@ public class Home {
     private JList list1;
     private JButton exitButton;
 
+    /**
+     * Instantiates a new Home.
+     */
     public Home() {
         exitButton.addActionListener(new ActionListener() {
             @Override
@@ -41,6 +47,11 @@ public class Home {
         });
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         frame = new JFrame("Home");
         frame.setContentPane(new Home().panel);
