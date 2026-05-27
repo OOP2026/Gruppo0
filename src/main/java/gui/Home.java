@@ -1,6 +1,7 @@
 package gui;
 
 import controller.Controller;
+import model.Utente;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,6 +31,7 @@ public class Home {
      * Instantiates a new Home.
      */
     public Home() {
+        Utente utente = new Utente("io", "password");
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

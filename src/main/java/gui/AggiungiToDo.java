@@ -1,6 +1,7 @@
 package gui;
 
 import controller.Controller;
+import model.ToDo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
